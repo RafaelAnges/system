@@ -1,4 +1,4 @@
-package com.rafaelanges.system.resource;
+package com.rafaelanges.system.resources;
 
 import java.net.URI;
 import java.util.List;
