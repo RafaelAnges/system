@@ -45,9 +45,15 @@ public class UserService {
 	}
 	
 	public User update(Long id, User obj) {
+		try {
+		
 		User entity = repository.getOne(id);
 		updateData(entity, obj);
 		return repository.save(entity);
+		}
+		catch(javax.persistence.EntityNotFoundException e) {
+			throw new ResourceNotFoundException(id);
+		}
 	}
 
 	private void updateData(User entity, User obj) {
